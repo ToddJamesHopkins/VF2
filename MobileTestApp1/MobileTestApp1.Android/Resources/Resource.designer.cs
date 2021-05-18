@@ -11809,7 +11809,10 @@ namespace MobileTestApp1.Droid
 			public const int VF_Logo_Bottom = 2131165334;
 			
 			// aapt resource value: 0x7F070097
-			public const int xamarin_logo = 2131165335;
+			public const int VF_Splash_Screen_Logo = 2131165335;
+			
+			// aapt resource value: 0x7F070098
+			public const int xamarin_logo = 2131165336;
 			
 			static Drawable()
 			{

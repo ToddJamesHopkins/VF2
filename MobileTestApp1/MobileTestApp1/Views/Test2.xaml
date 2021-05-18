@@ -12,7 +12,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height=".6* "></RowDefinition>
-                <RowDefinition Height="1* "></RowDefinition>
+                <RowDefinition Height="1.1* "></RowDefinition>
                 <RowDefinition Height=".2* "></RowDefinition>
 
 
@@ -25,12 +25,12 @@
             <StackLayout Grid.Row="1" VerticalOptions="Start">
 
 
-                <Label Text="Log-In" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                <Label Text="Log-In" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,5" />
                 <StackLayout WidthRequest="200" HorizontalOptions="Center">
-                    <Label Text="Phone Number"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold"  />
-                    <Entry Placeholder="Enter Phone Number Here" x:Name="Phone_Number" TextColor="White" BackgroundColor="{StaticResource Menu}" PlaceholderColor="Gray" Keyboard="Numeric"   ClearButtonVisibility="WhileEditing" StyleClass=""></Entry>
+                    <Label Text="Phone Number"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
+                    <Entry x:Name="Phone_Number" TextColor="White" BackgroundColor="{StaticResource Menu}" PlaceholderColor="Gray" Keyboard="Numeric"   ClearButtonVisibility="WhileEditing" StyleClass=""></Entry>
                     <Label Text="Password"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold"  />
-                    <Entry Placeholder="Enter Phone Number Here" x:Name="Password" TextColor="White" BackgroundColor="{StaticResource Menu}" PlaceholderColor="Gray" IsPassword="True"   ClearButtonVisibility="WhileEditing"></Entry>
+                    <Entry  x:Name="Password" TextColor="White" BackgroundColor="{StaticResource Menu}" PlaceholderColor="Gray" IsPassword="True"   ClearButtonVisibility="WhileEditing"></Entry>
                 </StackLayout>
                 <Button Margin="20" Style="{Binding ButtonStyle1}"  Text="Learn more" HorizontalOptions="Center" WidthRequest="200"
                         Clicked="Button_Clicked" TextColor="White" />
