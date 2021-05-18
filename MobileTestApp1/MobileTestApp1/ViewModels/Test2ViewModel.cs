@@ -9,7 +9,7 @@ namespace MobileTestApp1.ViewModels
     {
         public Test2ViewModel()
         {
-            Title = "Thank fuck";
+            Title = "Log-In";
         }
     }
 }
