@@ -19,7 +19,7 @@ namespace MobileTestApp1.ViewModels
 
         public ItemsViewModel()
         {
-            Title = "Browse";
+            Title = "Wtf cunt";
             Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

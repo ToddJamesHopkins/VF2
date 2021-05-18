@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileTestApp1.Views.Test2"
+                Title="{Binding Title}"
+                BackgroundColor="#E40001"
+                x:Name="Test22">
+             
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2* "></RowDefinition>
+                <RowDefinition Height="1* "></RowDefinition>
+                <RowDefinition Height=".2* "></RowDefinition>
+
+
+            </Grid.RowDefinitions>
+
+
+            <StackLayout Grid.Row="1" VerticalOptions="Center">
+                
+            
+                
+                <Label Text="Welcome to Xamarin.Forms!" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+
+                <Button  Style="{Binding ButtonStyle1}"  Text="Learn more" HorizontalOptions="Center" WidthRequest="200"
+                        Clicked="Button_Clicked" TextColor="White" />
+              
+                
+            
+                
+            </StackLayout>
+
+
+
+
+
+            <StackLayout Grid.Row="2" VerticalOptions="End">
+                <Image  WidthRequest="250" HorizontalOptions="Start" VerticalOptions="End" Source="vf_logo_bottom.png"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

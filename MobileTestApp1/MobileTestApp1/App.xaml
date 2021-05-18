@@ -7,15 +7,22 @@
     -->
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
-            <Style TargetType="Button">
-                <Setter Property="TextColor" Value="White"></Setter>
+            <Color x:Key="Primary">#B80001</Color>
+            <Color x:Key="Secondary">#E40001</Color>
+            <Color x:Key="Aux">White</Color>
+            <Color x:Key="Menu">#FF4B4C</Color>
+
+            
+            <Style TargetType="Button" x:Name="ButtonStyle1">
+                <Setter Property="BorderWidth" Value="2"></Setter>
+                <Setter Property="BorderColor" Value="White"/>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
                             <VisualState x:Name="Normal">
                                 <VisualState.Setters>
                                     <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                    <Setter Property="TextColor" Value="White"/>
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">
@@ -27,6 +34,7 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+            
         </ResourceDictionary>        
     </Application.Resources>
 </Application>
