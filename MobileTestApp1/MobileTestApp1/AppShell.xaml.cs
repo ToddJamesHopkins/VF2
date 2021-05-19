@@ -15,6 +15,10 @@ namespace MobileTestApp1
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(Test2), typeof(Test2));
             Routing.RegisterRoute(nameof(NotificationsError), typeof(NotificationsError));
+            Routing.RegisterRoute(nameof(TransAccepted), typeof(TransAccepted));
+            Routing.RegisterRoute(nameof(TransError), typeof(TransError));
+            Routing.RegisterRoute(nameof(RequestSent), typeof(RequestSent));
+            Routing.RegisterRoute(nameof(RequestError), typeof(RequestError));
 
         }
 

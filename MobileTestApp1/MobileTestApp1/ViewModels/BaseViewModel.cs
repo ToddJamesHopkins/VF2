@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
+using System.ComponentModel;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace MobileTestApp1.ViewModels
 {
@@ -50,5 +53,8 @@ namespace MobileTestApp1.ViewModels
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
+
+
+      
     }
 }

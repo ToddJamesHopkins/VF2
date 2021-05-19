@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileTestApp1.Views.NotificationsError" Title="{Binding Title}"
+             x:Class="MobileTestApp1.Views.RequestSent" Title="{Binding Title}"
                 BackgroundColor="#E40001">
 
 
@@ -16,21 +16,22 @@
 
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="0" VerticalOptions="Start" Margin="50">
-                <Image  WidthRequest="130"   Source="Notifications.png"/>
+                <Image  WidthRequest="130"   Source="request_transfer_icon.png
+"/>
             </StackLayout>
 
 
             <StackLayout Grid.Row="1" VerticalOptions="Start">
 
 
-                <Label Text="Error" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,5" />
+                <Label Text="Request Sent" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,5" />
                 <StackLayout WidthRequest="200" HorizontalOptions="Center">
-                    <Label Text="Error message goes here"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
-                   
-              
+                    <Label Text="Details go here"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
+
+
                 </StackLayout>
                 <Button Margin="20" Style="{Binding ButtonStyle1}"  Text="OK" HorizontalOptions="Center" WidthRequest="200" 
-                        TextColor="White" Clicked="Button_Clicked"  />
+                        TextColor="White"   />
 
 
 

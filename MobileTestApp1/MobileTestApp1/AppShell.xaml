@@ -88,6 +88,20 @@
     <FlyoutItem Title="Notifications error" >
         <ShellContent Route="NotificationsError" ContentTemplate="{DataTemplate local:NotificationsError}" />
     </FlyoutItem>
+    <FlyoutItem Title="Trans Accepted" >
+        <ShellContent Route="TransAccepted" ContentTemplate="{DataTemplate local:TransAccepted}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Trans Error" >
+        <ShellContent Route="TransError" ContentTemplate="{DataTemplate local:TransError}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Request Sent" >
+        <ShellContent Route="RequestSent" ContentTemplate="{DataTemplate local:RequestSent}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Request Error" >
+        <ShellContent Route="RequestError" ContentTemplate="{DataTemplate local:RequestError}" />
+    </FlyoutItem>
+
+
 
 
 

@@ -11,18 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace MobileTestApp1.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NotificationsError : ContentPage
+    public partial class TransAccepted : ContentPage
     {
-        public NotificationsError()
+        public TransAccepted()
         {
             InitializeComponent();
-            BindingContext = new NotificationsErrorViewModel2();
-            
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
+            BindingContext = new TransAcceptedViewModel();
         }
     }
 }
