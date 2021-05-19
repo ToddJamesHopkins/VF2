@@ -19,10 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\Splash_Screen.xaml">
+    <EmbeddedResource Update="Views\NotificationsError.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Test2.xaml">
+    <EmbeddedResource Update="Views\Splash_Screen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

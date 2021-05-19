@@ -11,8 +11,8 @@
             <Color x:Key="Secondary">#E40001</Color>
             <Color x:Key="Aux">White</Color>
             <Color x:Key="Menu">#FF4B4C</Color>
+            <FontAttributes x:Key="Title_Size">40</FontAttributes>
 
-            
             <Style TargetType="Button" x:Name="ButtonStyle1">
                 <Setter Property="BorderWidth" Value="2"></Setter>
                 <Setter Property="BorderColor" Value="White"/>

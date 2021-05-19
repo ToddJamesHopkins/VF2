@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileTestApp1.Views.Test2"
                 Title="{Binding Title}"
-                BackgroundColor="#E40001"
-                x:Name="Test22">
+                BackgroundColor="#E40001">
              
 
     <ContentPage.Content>

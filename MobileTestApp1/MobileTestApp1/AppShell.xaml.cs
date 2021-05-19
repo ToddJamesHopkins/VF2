@@ -14,6 +14,8 @@ namespace MobileTestApp1
             Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
             Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
             Routing.RegisterRoute(nameof(Test2), typeof(Test2));
+            Routing.RegisterRoute(nameof(NotificationsError), typeof(NotificationsError));
+
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
