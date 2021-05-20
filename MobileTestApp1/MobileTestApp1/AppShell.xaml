@@ -109,6 +109,12 @@
     <FlyoutItem Title="Request Transfer" >
         <ShellContent Route="RequestTransfer" ContentTemplate="{DataTemplate local:RequestTransfer}" />
     </FlyoutItem>
+    <FlyoutItem Title="TransferNewPerson" >
+        <ShellContent Route="TransferNewPerson" ContentTemplate="{DataTemplate local:TransferNewPerson}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Request New person" >
+        <ShellContent Route="RequestNewPerson" ContentTemplate="{DataTemplate local:RequestNewPerson}" />
+    </FlyoutItem>
 
 
 

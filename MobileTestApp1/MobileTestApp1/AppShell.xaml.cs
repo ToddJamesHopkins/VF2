@@ -22,6 +22,8 @@ namespace MobileTestApp1
             Routing.RegisterRoute(nameof(LoginError), typeof(LoginError));
             Routing.RegisterRoute(nameof(TransferPage1), typeof(TransferPage1));
             Routing.RegisterRoute(nameof(RequestTransfer), typeof(RequestTransfer));
+            Routing.RegisterRoute(nameof(TransferNewPerson), typeof(TransferNewPerson));
+            Routing.RegisterRoute(nameof(RequestNewPerson), typeof(RequestNewPerson));
 
 
         }
