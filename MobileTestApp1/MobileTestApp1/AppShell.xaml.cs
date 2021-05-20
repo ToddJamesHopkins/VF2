@@ -24,6 +24,8 @@ namespace MobileTestApp1
             Routing.RegisterRoute(nameof(RequestTransfer), typeof(RequestTransfer));
             Routing.RegisterRoute(nameof(TransferNewPerson), typeof(TransferNewPerson));
             Routing.RegisterRoute(nameof(RequestNewPerson), typeof(RequestNewPerson));
+            Routing.RegisterRoute(nameof(TransferAmount), typeof(TransferAmount));
+            Routing.RegisterRoute(nameof(RequestAmount), typeof(RequestAmount));
 
 
         }
