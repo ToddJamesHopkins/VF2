@@ -20,7 +20,7 @@
 
             <StackLayout Grid.Row="1" VerticalOptions="Start">
 
-                <Label Text="Error" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,5" />
+                <Label Text="Account Error" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,5" />
                 <StackLayout WidthRequest="200" HorizontalOptions="Center">
                     <Label Text="Invalid Username or Password"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
                     

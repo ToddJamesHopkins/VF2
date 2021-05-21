@@ -121,6 +121,18 @@
     <FlyoutItem Title="Request Amount" >
         <ShellContent Route="RequestAmount" ContentTemplate="{DataTemplate local:RequestAmount}" />
     </FlyoutItem>
+    <FlyoutItem Title="My Account" >
+        <ShellContent Route="MyAccount" ContentTemplate="{DataTemplate local:MyAccount}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Notifications page 1" >
+        <ShellContent Route="NotificationsPage1" ContentTemplate="{DataTemplate local:NotificationsPage1}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Transfer Favourites" >
+        <ShellContent Route="TransferFavourites" ContentTemplate="{DataTemplate local:TransferFavourites}" />
+    </FlyoutItem>
+    <FlyoutItem Title="Request Favourites" >
+        <ShellContent Route="RequestFavourites" ContentTemplate="{DataTemplate local:RequestFavourites}" />
+    </FlyoutItem>
 
 
 
