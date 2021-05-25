@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileTestApp1.Views.MyAccount" Title="{Binding Title}"
-                BackgroundColor="#E40001">
+                BackgroundColor="#E40001"
+             Appearing="ContentPage_Appearing">
 
 
     <ContentPage.Content>
