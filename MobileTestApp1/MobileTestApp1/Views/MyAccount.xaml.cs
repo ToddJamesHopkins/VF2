@@ -18,7 +18,7 @@ namespace MobileTestApp1.Views
         private async void ContentPage_Appearing(object sender, System.EventArgs e)
         {
             var client = new HttpClient();
-            var response = await client.GetAsync("http://localhost:5000/account/532543");
+            var response = await client.GetAsync("https://vodafonecredittransfer20210525130039.azurewebsites.net/account/532543");
             var stringResponse = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<Result>(stringResponse);
             Credit.Text = result.Credit_Balance_.ToString();
