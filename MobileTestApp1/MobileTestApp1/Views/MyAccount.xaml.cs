@@ -1,5 +1,6 @@
 ﻿using MobileTestApp1.ViewModels;
 using Newtonsoft.Json;
+using System;
 using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,13 +16,13 @@ namespace MobileTestApp1.Views
             this.BindingContext = new MyAccountViewModel();
         }
 
-        private async void ContentPage_Appearing(object sender, System.EventArgs e)
+        private async void ContentPage_Appearing(object sender, EventArgs e)
         {
             var client = new HttpClient();
             var response = await client.GetAsync("https://vodafonecredittransfer20210525130039.azurewebsites.net/account/532543");
             var stringResponse = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<Result>(stringResponse);
-            Credit.Text = result.Credit_Balance_.ToString();
+            Credit.Text = $"Credit: ${result.Credit_Balance_}";
         }
 
         private class Result
