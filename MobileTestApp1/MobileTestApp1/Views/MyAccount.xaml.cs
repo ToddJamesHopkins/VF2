@@ -24,12 +24,18 @@ namespace MobileTestApp1.Views
             try
             {
                 var number = int.Parse(Application.Current.Properties["number"].ToString());
-                var client = new HttpClient();
-                var response = await client.GetAsync($"{ApiHelper.BaseUrl}/account/{number}");
-                var stringResponse = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<Account>(stringResponse);
-                Number.Text = $"Number: {number}";
-                Credit.Text = $"Credit: ${result.Credit_Balance_}";
+                using (var client = new HttpClient())
+                {
+                    using (var response = await client.GetAsync($"{ApiHelper.BaseUrl}/account/{number}"))
+                    {
+                        var stringResponse = await response.Content.ReadAsStringAsync();
+                        var result = JsonConvert.DeserializeObject<Account>(stringResponse);
+                        Name.Text = $"Name: {result.Name}";
+                        Address.Text = $"Address: {result.Address}";
+                        Number.Text = $"Number: {number}";
+                        Credit.Text = $"Credit: ${result.Balance}";
+                    }
+                }
             }
             catch
             {

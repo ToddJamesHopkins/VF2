@@ -23,13 +23,17 @@ namespace MobileTestApp1.Views
                 ConfirmButton.IsEnabled = false;
 
                 var number = int.Parse(Phone_Number.Text);
-                var client = new HttpClient();
-                var response = await client.GetAsync($"{ApiHelper.BaseUrl}/account/{number}");
-                var stringResponse = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<Account>(stringResponse);
-                if (result.Mobile_or_Landline_Number_ != default)
+                using (var client = new HttpClient())
                 {
-                    await Shell.Current.GoToAsync($"TransferAmount?number={result.Mobile_or_Landline_Number_}");
+                    using (var response = await client.GetAsync($"{ApiHelper.BaseUrl}/account/{number}"))
+                    {
+                        var stringResponse = await response.Content.ReadAsStringAsync();
+                        var result = JsonConvert.DeserializeObject<Account>(stringResponse);
+                        if (result.Number != default)
+                        {
+                            await Shell.Current.GoToAsync($"TransferAmount?number={result.Number}");
+                        }
+                    }
                 }
             }
             catch

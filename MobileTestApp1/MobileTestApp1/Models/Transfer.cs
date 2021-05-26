@@ -2,7 +2,7 @@
 {
     class Transfer
     {
-        public int Amount { get; set; }
+        public decimal Amount { get; set; }
         public int FromNumber { get; set; }
     }
 }

@@ -24,29 +24,40 @@ namespace MobileTestApp1.Views
         {
             try
             {
-                await Shell.Current.GoToAsync($"TransAccepted?amount=10&number={NumberValue}");
-                return;
-
                 Loading.IsVisible = true;
                 ConfirmButton.IsEnabled = false;
 
                 var number = NumberValue;
-                var amount = int.Parse(Amount.Text);
-                var transfer = new Transfer
-                {
-                    Amount = amount,
-                    FromNumber = number
-                };
-                var data = JsonConvert.SerializeObject(transfer);
+                var amount = decimal.Parse(Amount.Text);
 
-                var client = new HttpClient();
-                var content = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync($"{ApiHelper.BaseUrl}/transfer/{number}", content);
-                var stringResponse = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<bool>(stringResponse);
-                if (result)
+                using (var client = new HttpClient())
                 {
-                    await Shell.Current.GoToAsync($"TransAccepted?amount={amount}&number={number}");
+                    using (var accountResponse = await client.GetAsync($"{ApiHelper.BaseUrl}/account/{number}"))
+                    {
+                        var stringAccountResponse = await accountResponse.Content.ReadAsStringAsync();
+                        var accountResult = JsonConvert.DeserializeObject<Account>(stringAccountResponse);
+                        if (accountResult.Balance < amount)
+                        {
+                            throw new Exception("Not enough balance");
+                        }
+                    }
+
+                    var transfer = new Transfer
+                    {
+                        Amount = amount,
+                        FromNumber = number
+                    };
+                    var data = JsonConvert.SerializeObject(transfer);
+                    var content = new StringContent(data, Encoding.UTF8, "application/json");
+                    using (var response = await client.PostAsync($"{ApiHelper.BaseUrl}/transfer/{number}", content))
+                    {
+                        var stringResponse = await response.Content.ReadAsStringAsync();
+                        var result = JsonConvert.DeserializeObject<bool>(stringResponse);
+                        if (result)
+                        {
+                            await Shell.Current.GoToAsync($"TransAccepted?amount={amount}&number={number}");
+                        }
+                    }
                 }
             }
             catch

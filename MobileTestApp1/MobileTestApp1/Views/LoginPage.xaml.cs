@@ -32,20 +32,25 @@ namespace MobileTestApp1.Views
                 };
 
                 var data = JsonConvert.SerializeObject(loginDetails);
-                var client = new HttpClient();
-                var content = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync($"{ApiHelper.BaseUrl}/account/login", content);
-                var stringResponse = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.DeserializeObject<bool>(stringResponse);
-                if (result)
+                using (var client = new HttpClient())
                 {
-                    Application.Current.Properties["number"] = number;
-                    await Shell.Current.GoToAsync($"//MyAccount");
+                    var content = new StringContent(data, Encoding.UTF8, "application/json");
+                    using (var response = await client.PostAsync($"{ApiHelper.BaseUrl}/account/login", content))
+                    {
+                        var stringResponse = await response.Content.ReadAsStringAsync();
+                        var result = JsonConvert.DeserializeObject<bool>(stringResponse);
+                        if (result)
+                        {
+                            Application.Current.Properties["number"] = number;
+                            await Shell.Current.GoToAsync($"//MyAccount");
+                        }
+                    }
                 }
             }
-            catch
+            catch (System.Exception ex)
             {
                 // Do nothing
+                var test = true;
             }
             finally
             {
