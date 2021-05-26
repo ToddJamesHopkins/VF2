@@ -28,11 +28,12 @@ namespace MobileTestApp1.Views
                 ConfirmButton.IsEnabled = false;
 
                 var number = NumberValue;
+                var fromNumber = int.Parse(Application.Current.Properties["number"].ToString());
                 var amount = decimal.Parse(Amount.Text);
 
                 using (var client = new HttpClient())
                 {
-                    using (var accountResponse = await client.GetAsync($"{ApiHelper.BaseUrl}/account/{number}"))
+                    using (var accountResponse = await client.GetAsync($"{ApiHelper.BaseUrl}/account/{fromNumber}"))
                     {
                         var stringAccountResponse = await accountResponse.Content.ReadAsStringAsync();
                         var accountResult = JsonConvert.DeserializeObject<Account>(stringAccountResponse);
@@ -45,7 +46,7 @@ namespace MobileTestApp1.Views
                     var transfer = new Transfer
                     {
                         Amount = amount,
-                        FromNumber = number
+                        FromNumber = fromNumber
                     };
                     var data = JsonConvert.SerializeObject(transfer);
                     var content = new StringContent(data, Encoding.UTF8, "application/json");
@@ -55,7 +56,7 @@ namespace MobileTestApp1.Views
                         var result = JsonConvert.DeserializeObject<bool>(stringResponse);
                         if (result)
                         {
-                            await Shell.Current.GoToAsync($"TransAccepted?amount={amount}&number={number}");
+                            await Shell.Current.GoToAsync($"TransAccepted?amount={amount}&number={fromNumber}");
                         }
                     }
                 }
