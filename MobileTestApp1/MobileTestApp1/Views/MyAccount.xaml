@@ -22,12 +22,12 @@
 
                 <Label Text="Account Details" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,5" />
 
-                <ActivityIndicator x:Name="Loading" Margin="20" IsRunning="true"/>
+                <ActivityIndicator x:Name="Loading" Margin="20" IsRunning="True" Color="White"/>
                 <StackLayout x:Name="Details" WidthRequest="200" HorizontalOptions="Center" IsVisible="false">
-                    <Label x:Name="Name" Text="Name: BoB"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
+                    <Label x:Name="Name" Text="Name: BoB" HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
                     <Label x:Name="Address" Text="Address: 35 Cameron Road"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
-                    <Label x:Name="Number" Text="Number: 021123456"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
-                    <Label x:Name="Credit" Text="Credit: $29"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
+                    <Label x:Name="Number" Text="Number:"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
+                    <Label x:Name="Credit" Text="Credit:"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
                 </StackLayout>
             
             </StackLayout>

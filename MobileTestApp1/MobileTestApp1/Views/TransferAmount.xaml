@@ -1,48 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:mobiletestapp1="clr-namespace:MobileTestApp1" 
+             x:DataType="mobiletestapp1:AppShell"
              x:Class="MobileTestApp1.Views.TransferAmount"
-                Title="Transfer Amout"
-                BackgroundColor="#E40001">
-
-
+             Title="Transfer Amout"
+             BackgroundColor="#E40001">
     <ContentPage.Content>
-
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height=".6* "></RowDefinition>
                 <RowDefinition Height="1.1* "></RowDefinition>
                 <RowDefinition Height=".2* "></RowDefinition>
-
-
             </Grid.RowDefinitions>
+
             <StackLayout Grid.Row="0" VerticalOptions="Start" Margin="50">
                 <Image  WidthRequest="130"   Source="Transfer_Icon.png"/>
             </StackLayout>
 
-
             <StackLayout Grid.Row="1" VerticalOptions="Start">
-
-
                 <Label x:Name="test" Text="Select Amount" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,5" />
                 <StackLayout WidthRequest="200" HorizontalOptions="Center">
-                    <Label Text="Select Credit,Data, or Minutes"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
-                    <Picker x:Name="PickerItems" Title="Credit Type" SelectedIndexChanged="PickerItems_SelectedIndexChanged" TextColor="White" BackgroundColor="{StaticResource Menu}">
-                        <Picker.Items>
-                            <x:String>Credit</x:String>
-                            <x:String>Data</x:String>
-                            <x:String>Minutes</x:String>
-                        </Picker.Items>
-                    </Picker>
-                            <Label Text="Amount"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold"  />
-                    <Entry  TextColor="White" BackgroundColor="{StaticResource Menu}" PlaceholderColor="Gray" IsPassword="True"   ClearButtonVisibility="WhileEditing"></Entry>
+                    <Label Text="Amount ($)" HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold"  />
+                    <Entry x:Name="Amount" TextColor="White" BackgroundColor="{StaticResource Menu}" PlaceholderColor="Gray" Keyboard="Numeric" ClearButtonVisibility="WhileEditing"></Entry>
                 </StackLayout>
-                <Button Margin="20" Style="{DynamicResource ButtonStyle1}"  Text="Confirm" HorizontalOptions="Center" WidthRequest="200"
-                        TextColor="White" />
-
-
-
-
+                <Button x:Name="ConfirmButton" Margin="20" Style="{DynamicResource ButtonStyle1}" Clicked="Button_Clicked" Text="Confirm" HorizontalOptions="Center" WidthRequest="200" TextColor="White" />
+                <ActivityIndicator x:Name="Loading" Margin="20" IsRunning="True" IsVisible="false" Color="White"/>
             </StackLayout>
 
             <StackLayout Grid.Row="2" VerticalOptions="End">

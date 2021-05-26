@@ -8,7 +8,6 @@ using Xamarin.Forms.Xaml;
 
 namespace MobileTestApp1.Views
 {
-    [QueryProperty(nameof(NumberValue), "number")]
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyAccount : ContentPage
     {
@@ -16,8 +15,6 @@ namespace MobileTestApp1.Views
         {
             InitializeComponent();
         }
-
-        public int NumberValue { get; set; }
 
         protected override async void OnAppearing()
         {

@@ -66,9 +66,15 @@
     <FlyoutItem Title="Login Page" Icon="account_icon.png" FlyoutItemIsVisible="False">
         <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </FlyoutItem>
+
     <FlyoutItem Title="My Account" Icon="account_icon.png">
         <ShellContent Route="MyAccount" ContentTemplate="{DataTemplate local:MyAccount}" />
     </FlyoutItem>
+
+    <FlyoutItem Title="Make Transfer" Icon="transfer_icon.png">
+        <ShellContent Route="TransferPage" ContentTemplate="{DataTemplate local:TransferPage}" />
+    </FlyoutItem>
+    
     <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem>
 </Shell>

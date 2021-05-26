@@ -40,7 +40,7 @@ namespace MobileTestApp1.Views
                 if (result)
                 {
                     Application.Current.Properties["number"] = number;
-                    await Shell.Current.GoToAsync($"//MyAccount?number={number}");
+                    await Shell.Current.GoToAsync($"//MyAccount");
                 }
             }
             catch
