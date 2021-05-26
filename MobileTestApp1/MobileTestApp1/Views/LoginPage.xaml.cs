@@ -38,7 +38,6 @@ namespace MobileTestApp1.Views
                 var result = JsonConvert.DeserializeObject<bool>(stringResponse);
                 if (result)
                     await Shell.Current.GoToAsync($"//MyAccount?number={number}");
-
             }
             catch
             {
