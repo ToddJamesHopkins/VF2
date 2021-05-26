@@ -1,9 +1,8 @@
-﻿using MobileTestApp1.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using MobileTestApp1.Helpers;
+using MobileTestApp1.Models;
+using Newtonsoft.Json;
+using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +14,49 @@ namespace MobileTestApp1.Views
         public LoginPage()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
+        }
+
+        private async void Button_Clicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                Loading.IsVisible = true;
+                LoginButton.IsEnabled = false;
+
+                var number = int.Parse(Phone_Number.Text);
+                var password = Password.Text;
+                var loginDetails = new LoginDetails
+                {
+                    Number = number,
+                    Password = password
+                };
+
+                var data = JsonConvert.SerializeObject(loginDetails);
+                using (var client = new HttpClient())
+                {
+                    var content = new StringContent(data, Encoding.UTF8, "application/json");
+                    using (var response = await client.PostAsync($"{ApiHelper.BaseUrl}/account/login", content))
+                    {
+                        var stringResponse = await response.Content.ReadAsStringAsync();
+                        var result = JsonConvert.DeserializeObject<bool>(stringResponse);
+                        if (result)
+                        {
+                            Application.Current.Properties["number"] = number;
+                            await Shell.Current.GoToAsync($"//MyAccount");
+                        }
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                // Do nothing
+                var test = true;
+            }
+            finally
+            {
+                Loading.IsVisible = false;
+                LoginButton.IsEnabled = true;
+            }
         }
     }
 }

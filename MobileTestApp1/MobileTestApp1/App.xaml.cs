@@ -1,8 +1,4 @@
-﻿using MobileTestApp1.Services;
-using MobileTestApp1.Views;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace MobileTestApp1
 {
@@ -12,8 +8,6 @@ namespace MobileTestApp1
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
