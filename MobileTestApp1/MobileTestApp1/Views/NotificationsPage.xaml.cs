@@ -4,9 +4,9 @@ using Xamarin.Forms.Xaml;
 namespace MobileTestApp1.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginError : ContentPage
+    public partial class NotificationsPage : ContentPage
     {
-        public LoginError()
+        public NotificationsPage()
         {
             InitializeComponent();
         }

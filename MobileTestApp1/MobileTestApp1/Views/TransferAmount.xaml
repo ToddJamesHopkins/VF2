@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileTestApp1.Views.TransferAmount"
-                Title="{Binding Title}"
+                Title="Transfer Amout"
                 BackgroundColor="#E40001">
 
 
@@ -37,7 +37,7 @@
                             <Label Text="Amount"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold"  />
                     <Entry  TextColor="White" BackgroundColor="{StaticResource Menu}" PlaceholderColor="Gray" IsPassword="True"   ClearButtonVisibility="WhileEditing"></Entry>
                 </StackLayout>
-                <Button Margin="20" Style="{Binding ButtonStyle1}"  Text="Confirm" HorizontalOptions="Center" WidthRequest="200"
+                <Button Margin="20" Style="{DynamicResource ButtonStyle1}"  Text="Confirm" HorizontalOptions="Center" WidthRequest="200"
                         TextColor="White" />
 
 

@@ -37,12 +37,14 @@ namespace MobileTestApp1.Views
                 var stringResponse = await response.Content.ReadAsStringAsync();
                 var result = JsonConvert.DeserializeObject<bool>(stringResponse);
                 if (result)
+                {
                     await Shell.Current.GoToAsync($"//MyAccount?number={number}");
+                }
             }
             catch
             {
                 // Do nothing
-            } 
+            }
             finally
             {
                 Loading.IsVisible = false;

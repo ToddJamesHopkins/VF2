@@ -12,17 +12,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Images\Vodafone_Bottom_Logo" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Images\Vodafone_Bottom_Logo" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\NotificationsPage.xaml.cs">
+      <DependentUpon>NotificationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TransferPage.xaml.cs">
+      <DependentUpon>TransferPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -35,7 +36,7 @@
     <EmbeddedResource Update="Views\NotificationsError.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\NotificationsPage1.xaml">
+    <EmbeddedResource Update="Views\NotificationsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RequestAmount.xaml">
@@ -56,9 +57,6 @@
     <EmbeddedResource Update="Views\RequestTransfer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Splash_Screen.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\TransAccepted.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -74,7 +72,7 @@
     <EmbeddedResource Update="Views\TransferNewPerson.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TransferPage1.xaml">
+    <EmbeddedResource Update="Views\TransferPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

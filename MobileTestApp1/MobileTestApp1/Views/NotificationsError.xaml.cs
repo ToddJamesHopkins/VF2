@@ -1,10 +1,4 @@
-﻿using MobileTestApp1.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -16,8 +10,6 @@ namespace MobileTestApp1.Views
         public NotificationsError()
         {
             InitializeComponent();
-            BindingContext = new NotificationsErrorViewModel2();
-            
         }
 
         private void Button_Clicked(object sender, EventArgs e)

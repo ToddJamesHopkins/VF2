@@ -1,5 +1,4 @@
-﻿using MobileTestApp1.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +15,6 @@ namespace MobileTestApp1.Views
         public TransAccepted()
         {
             InitializeComponent();
-            BindingContext = new TransAcceptedViewModel();
         }
     }
 }

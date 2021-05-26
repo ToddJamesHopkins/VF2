@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileTestApp1.Views.TransferPage1" Title="{Binding Title}"
+             x:Class="MobileTestApp1.Views.TransferPage" Title="Transfer"
                 BackgroundColor="#E40001">
 
 
@@ -30,9 +30,9 @@
 
 
                 </StackLayout>
-                <Button Margin="20" Style="{Binding ButtonStyle1}"  Text="My Favourites" HorizontalOptions="Center" WidthRequest="200" 
+                <Button Margin="20" Style="{DynamicResource ButtonStyle1}"  Text="My Favourites" HorizontalOptions="Center" WidthRequest="200" 
                         TextColor="White"  />
-                <Button Margin="10" Style="{Binding ButtonStyle1}"  Text="New Person" HorizontalOptions="Center" WidthRequest="200" 
+                <Button Margin="10" Style="{DynamicResource ButtonStyle1}"  Text="New Person" HorizontalOptions="Center" WidthRequest="200" 
                         TextColor="White"  />
 
 

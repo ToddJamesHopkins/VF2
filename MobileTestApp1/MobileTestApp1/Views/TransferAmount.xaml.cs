@@ -1,5 +1,4 @@
-﻿using MobileTestApp1.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,19 +16,12 @@ namespace MobileTestApp1.Views
         public TransferAmount()
         {
             InitializeComponent();
-            BindingContext = new TransferPage1ViewModel();
-            
-
-
         }
 
         private void PickerItems_SelectedIndexChanged(object sender, EventArgs e)
         {
             Picker selecteditem = (Picker)sender;
-        
             CredType = selecteditem.SelectedIndex;
-       
-
         }
     }
 }
