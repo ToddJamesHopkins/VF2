@@ -28,7 +28,7 @@
                     <Entry  x:Name="Password" TextColor="White" BackgroundColor="{StaticResource Menu}" PlaceholderColor="Gray" IsPassword="True" ClearButtonVisibility="WhileEditing"></Entry>
                 </StackLayout>
                 <Button  x:Name="LoginButton" Margin="20" Style="{DynamicResource ButtonStyle1}" Text="Login" HorizontalOptions="Center" WidthRequest="200" Clicked="Button_Clicked" TextColor="White" />
-                <ActivityIndicator x:Name="Loading" Margin="20" IsRunning="True" IsVisible="false"/>
+                <ActivityIndicator x:Name="Loading" Margin="20" IsRunning="True" IsVisible="false" Color="White"/>
             </StackLayout>
 
             <StackLayout Grid.Row="2" VerticalOptions="End">

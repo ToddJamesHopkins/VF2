@@ -1,4 +1,5 @@
-﻿using MobileTestApp1.Models;
+﻿using MobileTestApp1.Helpers;
+using MobileTestApp1.Models;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -25,10 +26,9 @@ namespace MobileTestApp1.Views
 
             try
             {
-                var number = NumberValue;
-
+                var number = int.Parse(Application.Current.Properties["number"].ToString());
                 var client = new HttpClient();
-                var response = await client.GetAsync($"https://vodafonecredittransfer20210525130039.azurewebsites.net/account/{number}");
+                var response = await client.GetAsync($"{ApiHelper.BaseUrl}/account/{number}");
                 var stringResponse = await response.Content.ReadAsStringAsync();
                 var result = JsonConvert.DeserializeObject<Account>(stringResponse);
                 Number.Text = $"Number: {number}";

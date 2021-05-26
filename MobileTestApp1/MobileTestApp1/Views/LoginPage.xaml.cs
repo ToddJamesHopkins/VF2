@@ -1,4 +1,5 @@
-﻿using MobileTestApp1.Models;
+﻿using MobileTestApp1.Helpers;
+using MobileTestApp1.Models;
 using Newtonsoft.Json;
 using System.Net.Http;
 using System.Text;
@@ -29,15 +30,16 @@ namespace MobileTestApp1.Views
                     Number = number,
                     Password = password
                 };
-                var data = JsonConvert.SerializeObject(loginDetails);
 
+                var data = JsonConvert.SerializeObject(loginDetails);
                 var client = new HttpClient();
                 var content = new StringContent(data, Encoding.UTF8, "application/json");
-                var response = await client.PostAsync($"https://vodafonecredittransfer20210525130039.azurewebsites.net/account/login", content);
+                var response = await client.PostAsync($"{ApiHelper.BaseUrl}/account/login", content);
                 var stringResponse = await response.Content.ReadAsStringAsync();
                 var result = JsonConvert.DeserializeObject<bool>(stringResponse);
                 if (result)
                 {
+                    Application.Current.Properties["number"] = number;
                     await Shell.Current.GoToAsync($"//MyAccount?number={number}");
                 }
             }
