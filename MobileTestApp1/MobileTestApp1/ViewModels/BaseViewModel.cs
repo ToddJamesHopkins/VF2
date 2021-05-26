@@ -1,20 +1,12 @@
-﻿using MobileTestApp1.Models;
-using MobileTestApp1.Services;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Xamarin.Forms;
-using System.ComponentModel;
-using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace MobileTestApp1.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
-
         bool isBusy = false;
         public bool IsBusy
         {
@@ -53,8 +45,5 @@ namespace MobileTestApp1.ViewModels
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
-
-
-      
     }
 }

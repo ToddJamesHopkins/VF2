@@ -3,7 +3,8 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:MobileTestApp1.Views"
        Title="MobileTestApp1"
-       x:Class="MobileTestApp1.AppShell">
+       x:Class="MobileTestApp1.AppShell"
+       FlyoutIsPresented="True">
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -79,69 +80,23 @@
         https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
     -->
 
-    <FlyoutItem Title="Splash Screen" Icon="icon_feed.png">
-        <ShellContent Route="Splash_Screen" ContentTemplate="{DataTemplate local:Splash_Screen}" />
+    <FlyoutItem Title="Login Page" Icon="account_icon.png" FlyoutItemIsVisible="False">
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
     </FlyoutItem>
-    <FlyoutItem Title="Log-In page" >
-        <ShellContent Route="Test2" ContentTemplate="{DataTemplate local:Test2}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Notifications error" >
-        <ShellContent Route="NotificationsError" ContentTemplate="{DataTemplate local:NotificationsError}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Trans Accepted" >
-        <ShellContent Route="TransAccepted" ContentTemplate="{DataTemplate local:TransAccepted}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Trans Error" >
-        <ShellContent Route="TransError" ContentTemplate="{DataTemplate local:TransError}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Request Sent" >
-        <ShellContent Route="RequestSent" ContentTemplate="{DataTemplate local:RequestSent}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Request Error" >
-        <ShellContent Route="RequestError" ContentTemplate="{DataTemplate local:RequestError}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Login Error" >
-        <ShellContent Route="LoginError" ContentTemplate="{DataTemplate local:LoginError}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Transfer page 1" >
-        <ShellContent Route="TransferPage1" ContentTemplate="{DataTemplate local:TransferPage1}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Request Transfer" >
-        <ShellContent Route="RequestTransfer" ContentTemplate="{DataTemplate local:RequestTransfer}" />
-    </FlyoutItem>
-    <FlyoutItem Title="TransferNewPerson" >
-        <ShellContent Route="TransferNewPerson" ContentTemplate="{DataTemplate local:TransferNewPerson}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Request New person" >
-        <ShellContent Route="RequestNewPerson" ContentTemplate="{DataTemplate local:RequestNewPerson}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Transfer Amount" >
-        <ShellContent Route="TransferAmount" ContentTemplate="{DataTemplate local:TransferAmount}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Request Amount" >
-        <ShellContent Route="RequestAmount" ContentTemplate="{DataTemplate local:RequestAmount}" />
-    </FlyoutItem>
-    <FlyoutItem Title="My Account" >
+    <FlyoutItem Title="My Account" Icon="account_icon.png">
         <ShellContent Route="MyAccount" ContentTemplate="{DataTemplate local:MyAccount}" />
     </FlyoutItem>
-    <FlyoutItem Title="Notifications page 1" >
-        <ShellContent Route="NotificationsPage1" ContentTemplate="{DataTemplate local:NotificationsPage1}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Transfer Favourites" >
-        <ShellContent Route="TransferFavourites" ContentTemplate="{DataTemplate local:TransferFavourites}" />
-    </FlyoutItem>
-    <FlyoutItem Title="Request Favourites" >
-        <ShellContent Route="RequestFavourites" ContentTemplate="{DataTemplate local:RequestFavourites}" />
-    </FlyoutItem>
-
-
-
-
-
+    <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
+    </MenuItem>
 
     <!-- When the Flyout is visible this will be a menu item you can tie a click behavior to 
     <MenuItem Text="Logout" StyleClass="MenuItemLayoutStyle" Clicked="OnMenuItemClicked">
     </MenuItem> -->
+
+    <!--<TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+        <ShellContent Route="MyAccount" ContentTemplate="{DataTemplate local:MyAccount}" />
+    </TabBar>-->
 
     <!--
         TabBar lets you define content that won't show up in a flyout menu. When this content is active

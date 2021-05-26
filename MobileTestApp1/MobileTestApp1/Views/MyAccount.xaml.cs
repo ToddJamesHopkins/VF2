@@ -1,43 +1,48 @@
-﻿using MobileTestApp1.ViewModels;
+﻿using MobileTestApp1.Models;
 using Newtonsoft.Json;
-using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace MobileTestApp1.Views
 {
+    [QueryProperty(nameof(NumberValue), "number")]
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyAccount : ContentPage
     {
         public MyAccount()
         {
             InitializeComponent();
-            this.BindingContext = new MyAccountViewModel();
         }
 
-        private async void ContentPage_Appearing(object sender, EventArgs e)
-        {
-            var client = new HttpClient();
-            var response = await client.GetAsync("https://vodafonecredittransfer20210525130039.azurewebsites.net/account/532543");
-            var stringResponse = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<Result>(stringResponse);
-            Credit.Text = $"Credit: ${result.Credit_Balance_}";
-        }
+        public int NumberValue { get; set; }
 
-        private class Result
+        protected override async void OnAppearing()
         {
-            public int CustomerID { get; set; }
-            public int Mobile_or_Landline_Number_ { get; set; }
-            public string Account_Password_ { get; set; }
-            public decimal Credit_Balance_ { get; set; }
-            public int Minutes_Balance { get; set; }
-            public int Data_Balance_In_MB { get; set; }
-            public bool Allow_Credit_transfer_request { get; set; }
-            public bool On_contract { get; set; }
-            public bool Allow_Notifications { get; set; }
-            public int Current_Notification_Count { get; set; }
-            public bool Is_Transfer_Verified { get; set; }
+            base.OnAppearing();
+            await Task.Yield();
+
+            try
+            {
+                var number = NumberValue;
+
+                var client = new HttpClient();
+                var response = await client.GetAsync($"https://vodafonecredittransfer20210525130039.azurewebsites.net/account/{number}");
+                var stringResponse = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<Account>(stringResponse);
+                Number.Text = $"Number: {number}";
+                Credit.Text = $"Credit: ${result.Credit_Balance_}";
+            }
+            catch
+            {
+                // Finally
+            }
+            finally
+            {
+                Loading.IsVisible = false;
+                Details.IsVisible = true;
+            }
         }
     }
 }
