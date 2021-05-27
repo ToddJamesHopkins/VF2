@@ -27,7 +27,7 @@
 
                 <Label Text="Account Details" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,5" />
                 <StackLayout WidthRequest="200" HorizontalOptions="Center">
-                    <Label x:Name="Name" Text="{Binding NameText}"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
+                    <Label x:Name="Name" Text="{Binding NameText}" HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
                     <Label x:Name="Address" Text="x:Address 35 Cameron Road"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
                     <Label x:Name="Number" Text="x:Number 021123456"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
 

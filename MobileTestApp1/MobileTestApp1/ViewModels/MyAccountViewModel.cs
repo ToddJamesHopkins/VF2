@@ -11,7 +11,13 @@ namespace MobileTestApp1.ViewModels
 {
     public class MyAccountViewModel : BaseViewModel
     {
-        public string NameText { get; set; }
+        private string _nameText;
+        public string NameText 
+        { 
+            get => _nameText;
+            set => SetProperty(ref _nameText, value); 
+        }
+
         public int MyProperty { get; }
         public Command LoadedCommand { get; }
 
@@ -31,7 +37,7 @@ namespace MobileTestApp1.ViewModels
             HttpResponseMessage response = await client.GetAsync("https://vodafonecredittransfer20210525130039.azurewebsites.net/account/532543");
 
             Account_Details_TBL accout = JsonConvert.DeserializeObject<Account_Details_TBL>(await response.Content.ReadAsStringAsync());
-            
+
             NameText = $"Two";
             Debug.WriteLine("note B " + NameText);
         }
