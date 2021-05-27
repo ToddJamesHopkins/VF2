@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileTestApp1.Views.MyAccount" Title="{Binding Title}"
-                BackgroundColor="#E40001">
+             BackgroundColor="#E40001"
+             xmlns:local="clr-namespace:MobileTestApp1.Behavior">
+
+    <ContentPage.Behaviors>
+        <local:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadedCommand}" />
+    </ContentPage.Behaviors>
 
 
     <ContentPage.Content>
@@ -22,7 +27,7 @@
 
                 <Label Text="Account Details" TextColor="White" FontSize="40" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"  Margin="0,0,0,5" />
                 <StackLayout WidthRequest="200" HorizontalOptions="Center">
-                    <Label x:Name="Name" Text="x:Name BoB"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
+                    <Label x:Name="Name" Text="{Binding NameText}"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
                     <Label x:Name="Address" Text="x:Address 35 Cameron Road"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
                     <Label x:Name="Number" Text="x:Number 021123456"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
 
@@ -30,7 +35,7 @@
                     <Label x:Name="Data"  Text="x:Data 2000Mb"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
                     <Label x:Name="Minutes"  Text="x:Minutes 100 Minutes"  HorizontalOptions="Start" TextColor="White" FontSize="14" FontAttributes="Bold" Margin="0,0,0,5" />
                 </StackLayout>
-            
+
             </StackLayout>
 
             <StackLayout Grid.Row="2" VerticalOptions="End">
